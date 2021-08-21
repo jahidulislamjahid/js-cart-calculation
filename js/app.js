@@ -57,7 +57,7 @@ function subtotal() {
     document.getElementById('total-cost').innerText = subTotalCost;
 }
 
-
+// promo secton 
 document.getElementById('promo-button').addEventListener('click', function () {
     let promo = document.getElementById('promo-input').value;
     let code = 'stevekaku'
