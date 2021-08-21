@@ -48,10 +48,29 @@ document.getElementById('express-delivery').addEventListener('click', function (
     document.getElementById('free-delivery').disabled = false;
     document.getElementById('express-delivery').disabled = true;
     subtotal();
+    // discounted();
 });
 
-
+// total calculation 
 function subtotal() {
     let subTotalCost = document.getElementById('sub-total').innerText = parseFloat(document.getElementById('base-cost').innerText) + parseFloat(document.getElementById('memory-cost').innerText) + parseFloat(document.getElementById('storage-cost').innerText) + parseFloat(document.getElementById('delivery-cost').innerText)
     document.getElementById('total-cost').innerText = subTotalCost;
+}
+
+
+document.getElementById('promo-button').addEventListener('click', function () {
+    let promo = document.getElementById('promo-input').value;
+    let code = 'stevekaku'
+    if (promo == code && promo.value != '') {
+        discounted();
+        document.getElementById('promo-input').value = '';
+        document.getElementById('promo-button').disabled = true;
+    }
+    else {
+        console.log('invalid promo');
+    }
+})
+// promo code 
+function discounted() {
+    document.getElementById('total-cost').innerText = parseFloat(document.getElementById('total-cost').innerText) * .8;
 }
