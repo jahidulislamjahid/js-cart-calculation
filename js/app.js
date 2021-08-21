@@ -50,6 +50,8 @@ document.getElementById('express-delivery').addEventListener('click', function (
     subtotal();
 });
 
+
 function subtotal() {
-    document.getElementById('sub-total').innerText = parseFloat(document.getElementById('base-cost').innerText) + parseFloat(document.getElementById('memory-cost').innerText) + parseFloat(document.getElementById('storage-cost').innerText) + parseFloat(document.getElementById('delivery-cost').innerText)
+    let subTotalCost = document.getElementById('sub-total').innerText = parseFloat(document.getElementById('base-cost').innerText) + parseFloat(document.getElementById('memory-cost').innerText) + parseFloat(document.getElementById('storage-cost').innerText) + parseFloat(document.getElementById('delivery-cost').innerText)
+    document.getElementById('total-cost').innerText = subTotalCost;
 }
